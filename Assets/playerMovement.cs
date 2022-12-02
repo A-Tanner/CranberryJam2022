@@ -11,6 +11,9 @@ public class playerMovement : MonoBehaviour
     private float jumpStrength;
     [SerializeField]
     private float gravity = 2.0f;
+    [SerializeField]
+    private Animator animator;
+
     private float upwardsAcceleration=0;
 
     CharacterController controller;
@@ -22,14 +25,20 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool moving = false;
         float mult = Time.deltaTime * speed;
         float xMove = Input.GetAxisRaw("Horizontal")*mult;
         float zMove = Input.GetAxisRaw("Vertical")*mult;
         float yMove = 0;
         JumpHandle();
         yMove = upwardsAcceleration;
-
-        controller.Move(new Vector3(xMove,yMove,zMove));
+        Vector3 movedir = new Vector3(xMove, yMove, zMove);
+        if (xMove !=0 || zMove != 0)
+        {
+            moving = true;
+        }
+        animator.SetBool("moving", moving);
+        controller.Move(movedir);
     }
 
     private void JumpHandle()
