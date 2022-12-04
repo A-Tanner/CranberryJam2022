@@ -3213,6 +3213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 679395648}
   - component: {fileID: 679395647}
+  - component: {fileID: 679395649}
   m_Layer: 0
   m_Name: CM FreeLook1
   m_TagString: Untagged
@@ -3266,7 +3267,7 @@ MonoBehaviour:
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
-    m_InvertInput: 0
+    m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
     m_Wrap: 0
@@ -3342,6 +3343,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &679395649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679395646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 1
+  m_IgnoreTag: 
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 0
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0.37
+  m_Damping: 10
+  m_DampingWhenOccluded: 0
+  m_OptimalTargetDistance: 0
 --- !u!1001 &688024261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8052,22 +8083,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4928404702775248713, guid: 314eaab22f2215b4eacc393e2e345d0f, type: 3}
-      propertyPath: m_Height
-      value: 0.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 4928404702775248713, guid: 314eaab22f2215b4eacc393e2e345d0f, type: 3}
-      propertyPath: m_Radius
-      value: 0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 4928404702775248713, guid: 314eaab22f2215b4eacc393e2e345d0f, type: 3}
-      propertyPath: m_Center.y
-      value: -0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 4928404702775248713, guid: 314eaab22f2215b4eacc393e2e345d0f, type: 3}
-      propertyPath: m_Center.z
-      value: -0.03
-      objectReference: {fileID: 0}
     - target: {fileID: 4928404702775248714, guid: 314eaab22f2215b4eacc393e2e345d0f, type: 3}
       propertyPath: camera
       value: 
@@ -8090,19 +8105,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4928404702775248715, guid: 314eaab22f2215b4eacc393e2e345d0f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9969585
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4928404702775248715, guid: 314eaab22f2215b4eacc393e2e345d0f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4928404702775248715, guid: 314eaab22f2215b4eacc393e2e345d0f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.07793482
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4928404702775248715, guid: 314eaab22f2215b4eacc393e2e345d0f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4928404702775248715, guid: 314eaab22f2215b4eacc393e2e345d0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8110,7 +8125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4928404702775248715, guid: 314eaab22f2215b4eacc393e2e345d0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -8.94
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4928404702775248715, guid: 314eaab22f2215b4eacc393e2e345d0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
