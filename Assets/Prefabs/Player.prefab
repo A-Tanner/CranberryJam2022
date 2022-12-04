@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4928404702775248715}
   - component: {fileID: 4928404702775248713}
   - component: {fileID: 4928404702775248714}
+  - component: {fileID: 1004251459}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: frank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,6 +72,18 @@ MonoBehaviour:
   animator: {fileID: 4928404703931277858}
   camera: {fileID: 0}
   rotateTime: 0.3
+--- !u!114 &1004251459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4928404702775248716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37e2e99887a78b449fb98d6fb479ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4928404704327484317
 GameObject:
   m_ObjectHideFlags: 0

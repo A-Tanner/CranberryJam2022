@@ -11,9 +11,9 @@ public class PickupPhysics : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        this.transform.Rotate(new Vector3(0, rps * Time.deltaTime, 0));
+        this.transform.Rotate(new Vector3(0, rps * Time.deltaTime, 0), Space.World);
         float floatDist = floatSpeed * Time.deltaTime;
-        this.transform.Translate(new Vector3(0, floatDist, 0));
+        this.transform.Translate(new Vector3(0, floatDist, 0), Space.World);
         floatElapsed += Time.deltaTime;
         if (floatElapsed >= floatDuration)
         {

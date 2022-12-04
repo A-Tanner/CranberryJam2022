@@ -7,7 +7,8 @@ public class Inv : MonoBehaviour
 {
     public int turkeyCount { get; private set; }
     public bool hasGun { get; private set; }
-    private List<KeyEnum> keys;
+    private List<KeyEnum> keys = new();
+
 
     public void takeTurkey()
     {
@@ -22,6 +23,11 @@ public class Inv : MonoBehaviour
     public void takeGun()
     {
         hasGun = true;
+    }
+
+    public bool checkKey(KeyEnum type)
+    {
+        return keys.Contains(type);
     }
 
 }

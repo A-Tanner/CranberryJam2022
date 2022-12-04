@@ -5,26 +5,23 @@ using UnityEngine;
 public class DoorUnlock : MonoBehaviour
 {
     [SerializeField]
-    private KeyEnum unlocker = KeyEnum.None;
+    private KeyEnum key = KeyEnum.None;
     public Animator animator;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("frank"))
         {
-            animator.SetBool("unlocked", true);
+            if (key == KeyEnum.None)
+            {
+                animator.SetBool("unlocked", true);
+            }
+            else
+            {
+                animator.SetBool("unlocked", other.GetComponent<Inv>().checkKey(key));
+            }
         }
     }
 }
