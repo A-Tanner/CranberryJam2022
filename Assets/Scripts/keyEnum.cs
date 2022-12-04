@@ -5,6 +5,7 @@ using UnityEngine;
 
 public enum KeyEnum
 {
+    None,
     Cranberry,
     Lemon,
     Sugar
