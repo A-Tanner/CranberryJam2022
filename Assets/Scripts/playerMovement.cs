@@ -13,6 +13,11 @@ public class playerMovement : MonoBehaviour
     private float gravity = 2.0f;
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private Transform camera;
+    private float rotationVelocity=0;
+    [SerializeField]
+    private float rotateTime;
 
     private float upwardsAcceleration=0;
 
@@ -30,15 +35,32 @@ public class playerMovement : MonoBehaviour
         float xMove = Input.GetAxisRaw("Horizontal")*mult;
         float zMove = Input.GetAxisRaw("Vertical")*mult;
         float yMove = 0;
+        
         JumpHandle();
         yMove = upwardsAcceleration;
-        Vector3 movedir = new Vector3(xMove, yMove, zMove);
+        Vector3 inputDir = new Vector3(xMove, yMove, zMove);
+        
         if (xMove !=0 || zMove != 0)
         {
             moving = true;
         }
+
+        if (moving)
+        {
+            float targetAngle = Mathf.Atan2(inputDir.x, inputDir.z) * Mathf.Rad2Deg + camera.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationVelocity, rotateTime);
+
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+
+            controller.Move(moveDir*speed*Time.deltaTime);
+        }
+
+        
+        controller.Move( new Vector3 (0, upwardsAcceleration, 0));
+
         animator.SetBool("moving", moving);
-        controller.Move(movedir);
     }
 
     private void JumpHandle()
