@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.IO;
+using UnityEngine.UI;
 
 public class Car : MonoBehaviour
 {
@@ -14,8 +16,13 @@ public class Car : MonoBehaviour
                 SceneManager.LoadScene("end");
             } else
             {
-                // Print help message
+                StartCoroutine(GameObject.FindGameObjectWithTag("hint").GetComponentInChildren<HintText>().StringTimer("Revive 5 turkeys and find the sugar key!"));
             }
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        GameObject.FindGameObjectWithTag("hint").GetComponent<Text>().text = "Revive 5 turkeys and find the sugar key!";
     }
 }
