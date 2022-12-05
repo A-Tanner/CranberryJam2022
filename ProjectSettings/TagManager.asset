@@ -6,6 +6,7 @@ TagManager:
   tags:
   - frank
   - hint
+  - ray
   layers:
   - Default
   - TransparentFX
