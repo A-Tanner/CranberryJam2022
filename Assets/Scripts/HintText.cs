@@ -10,7 +10,7 @@ public class HintText : MonoBehaviour
     {
         gameObject.GetComponent<Text>().text = message;
         yield return new WaitForSeconds(5);
-        gameObject.GetComponent<Text>().text = " ";
+        gameObject.GetComponent<Text>().text = "  ";
     }
 
 }

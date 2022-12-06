@@ -21,6 +21,11 @@ public class DoorUnlock : MonoBehaviour
             else
             {
                 animator.SetBool("unlocked", other.GetComponent<Inv>().checkKey(key));
+
+                if (!other.GetComponent<Inv>().checkKey(key))
+                {
+                    StartCoroutine(GameObject.FindGameObjectWithTag("hint").GetComponent<HintText>().StringTimer($"Find the {key} key to unlock!"));
+                }
             }
         }
     }

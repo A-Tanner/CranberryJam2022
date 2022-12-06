@@ -30,7 +30,7 @@ public class Inv : MonoBehaviour
     {
         turkeyCount++;
 
-        GameObject.FindGameObjectWithTag("hint").GetComponent<Text>().text = ($"Revived {turkeyCount} turkeys!");
+        StartCoroutine(GameObject.FindGameObjectWithTag("hint").GetComponent<HintText>().StringTimer($"Revived {turkeyCount} turkey"+ (turkeyCount>1 ? "s" : "")+"!"));
     }
 
     public void takeKey(KeyEnum type)
